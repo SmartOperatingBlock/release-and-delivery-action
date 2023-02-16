@@ -23,31 +23,91 @@ inputs:
     required: false
 
   container-registry-name:
-    description: 'Server address of docker container registry. If not set then will default to Docker Hub'
+    description: 'Server address of the container registry. If not set then will default to Docker Hub'
     default: 'false'
     required: false
 
   container-registry-username:
-    description: 'Username used to log against the docker container registry'
+    description: 'Username used to log against the container registry'
     required: false
 
   container-registry-password:
-    description: 'Password or personal access token used to log against the docker container registry'
+    description: 'Password or personal access token used to log against the container registry'
     required: false
 
   image-name:
-    description: 'The name of docker container image built and delivered'
-    default: ${{ github.repository }}
+    description: 'The name of docker container image to build and deliver'
+    default: '${{ github.repository }}'
     required: false
 
-  release-token:
-    description: 'The token to use to perform the release'
-    required: false
-
-  container-delivery-token:
-    description: 'The token to use to perform the docker container delivery'
+  github-token:
+    description: 'The GitHub token, it will be exposed in the release step as the environment variable GITHUB_TOKEN'
     required: false
 
 runs:
   using: composite
   steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ inputs.github-token }}
+        submodules: recursive
+        fetch-depth: 0
+    - name: Release
+      if: inputs.should-release == 'true'
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+      shell: bash
+      run: |
+        echo "-- Start release --"
+        ${{ inputs.release-command }}
+        echo "-- End release"
+    - shell: bash
+      run: echo "should-deliver-container=${{ inputs.should-build-and-deliver-container == 'true' && (inputs.should-release == 'false' || env.CONTAINER_VERSION != '') }}" >> $GITHUB_ENV
+    - name: Set up QEMU
+      if: env.should-deliver-container == 'true'
+      uses: docker/setup-qemu-action@v2
+    - name: Set up Docker Buildx
+      if: env.should-deliver-container == 'true'
+      uses: docker/setup-buildx-action@v2
+    - name: Login to Docker Hub               # if the client has not provided a custom registry, then login to Docker Hub
+      if: env.should-deliver-container == 'true' && inputs.container-registry-name == 'false'
+      uses: docker/login-action@v2.1.0
+      with:
+        username: ${{ inputs.container-registry-username }}
+        password: ${{ inputs.container-registry-password }}
+    - name: Login to the Container registry   # Otherwise, if the client has provided a custom registry, then login to it
+      if: env.should-deliver-container == 'true' && inputs.container-registry-name != 'false'
+      uses: docker/login-action@v2.1.0
+      with:
+        registry: ${{ inputs.container-registry-name }}
+        username: ${{ inputs.container-registry-username }}
+        password: ${{ inputs.container-registry-password }}
+    - id: full-image-name                     # Obtain the full image name depending on the selected repository
+      if: env.should-deliver-container == 'true'
+      shell: bash
+      run: | 
+        if [ ${{ inputs.container-registry-name }} = 'false' ]
+        then
+          echo "image-name=${{ inputs.image-name }}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
+        else
+          echo "image-name=${{ inputs.container-registry-name }}/${{ inputs.image-name }}" | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
+        fi
+    - id: create-tags
+      if: env.should-deliver-container == 'true'
+      shell: bash
+      run: |
+        if [ "${{ env.CONTAINER_VERSION }}" = "" ]              # Check if the user has specified a version number
+        then
+          echo "tags=${{ steps.full-image-name.outputs.image-name }}:latest" >> $GITHUB_OUTPUT
+        else
+          echo "tags=${{ steps.full-image-name.outputs.image-name }}:latest, ${{ steps.full-image-name.outputs.image-name }}:${{ env.CONTAINER_VERSION }}" >> $GITHUB_OUTPUT
+        fi
+    - name: Build and push the image to the Container registry
+      if: env.should-deliver-container == 'true'
+      uses: docker/build-push-action@v4.0.0
+      with:
+        context: .
+        file: "./${{ inputs.docker-file-src }}" # Dockerfile path
+        push: true                              # Push the built image to the selected container
+        tags: ${{ steps.create-tags.outputs.tags }}
