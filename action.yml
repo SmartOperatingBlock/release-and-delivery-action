@@ -2,7 +2,51 @@ name: Release and Delivery action
 description: A simple composite GitHub Action taking care of the release and the docker container delivery of a project.
 
 inputs:
+  should-release:
+    description: 'True if the action should perform the release of the project'
+    default: true
+    required: false
   
+  release-command:
+    description: 'The command executed to perform the release'
+    default: 'true'
+    required: false
+
+  should-build-and-deliver-container:
+    description: 'True if the action should perform the build and the delivery of the docker image of the project'
+    default: true
+    required: false
+
+  docker-file-src:
+    descrition: 'The Dockerfile file path to use'
+    default: 'Dockerfile'
+    required: false
+
+  container-registry-name:
+    description: 'Server address of docker container registry. If not set then will default to Docker Hub'
+    default: 'false'
+    required: false
+
+  container-registry-username:
+    description: 'Username used to log against the docker container registry'
+    required: false
+
+  container-registry-password:
+    description: 'Password or personal access token used to log against the docker container registry'
+    required: false
+
+  image-name:
+    description: 'The name of docker container image built and delivered'
+    default: ${{ github.repository }}
+    required: false
+
+  release-token:
+    description: 'The token to use to perform the release'
+    required: false
+
+  container-delivery-token:
+    description: 'The token to use to perform the docker container delivery'
+    required: false
 
 runs:
   using: composite
