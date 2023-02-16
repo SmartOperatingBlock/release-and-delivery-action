@@ -1,0 +1,9 @@
+name: Release and Delivery action
+description: A simple composite GitHub Action taking care of the release and the docker container delivery of a project.
+
+inputs:
+  
+
+runs:
+  using: composite
+  steps:
