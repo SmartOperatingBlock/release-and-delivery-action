@@ -1,3 +1,15 @@
+## [1.0.3](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.2...1.0.3) (2023-06-14)
+
+
+### Dependency updates
+
+* **core-deps:** update docker/build-push-action action to v4.1.1 ([05bf340](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/05bf3405c3df4bbee4ae3bda45c04923c5407cc7))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.33 ([f6d2d44](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/f6d2d443747a120b33fb8fa36344e4665f23a92c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.34 ([13fd5b2](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/13fd5b284562cba56ce1597e29b7cc77a8011687))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.35 ([e75b04d](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/e75b04db664d46ed8a2f8c68a57ad3f2ae952f19))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.36 ([f708451](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/f7084512546767b35d4462dca6f1edbd77dd0f64))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.37 ([c646b41](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/c646b4124262002e9c76bbec10da91a564fb6310))
+
 ## [1.0.2](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.1...1.0.2) (2023-06-09)
 
 
