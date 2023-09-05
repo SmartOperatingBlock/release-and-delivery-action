@@ -1,3 +1,25 @@
+## [1.0.4](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.3...1.0.4) (2023-09-05)
+
+
+### Dependency updates
+
+* **core-deps:** update actions/checkout action to v4 ([4c44ca3](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/4c44ca30e5e99f5919706ac5619964eedf19eac3))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.38 ([dfe1a5e](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/dfe1a5e0d5c99b3d0cbed1a73f1643173163c03b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.39 ([6ce8c38](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/6ce8c38911630cbfdb7ac34ad889677dd1af3cf9))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.40 ([21e6d89](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/21e6d89b8fb074746495858edf1efbfa7716a5e0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.41 ([abea47d](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/abea47d31f6a5c0cb9770bc32d8ada453c4ee489))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.42 ([f7a50fa](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/f7a50fa1fbd7973800b2ea8ae1233bcdd7108558))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.43 ([37e4b29](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/37e4b296feb6721863d1e9e9abd59e1ab04415b0))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.44 ([a6bdc63](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/a6bdc6316367e5d10c90637c590277f6303d957b))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.46 ([d055f37](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/d055f37b0a06ee555e164f084b1be8d7a1d3b021))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.47 ([c5b1256](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/c5b1256269e338db4affacdad25734438e851abb))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.48 ([dc80c4d](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/dc80c4d3e3af7d0f0f67588852bf8caeb5859019))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.49 ([962ac89](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/962ac8969707e69546c3fc9a4b691b901eea46c4))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.51 ([b305679](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/b305679862283e03b423c20e0e81de0f29388adf))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.52 ([6770e78](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/6770e782c5f8ce6d7c42d1d0e2883bed157e75d4))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.53 ([94cfe6e](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/94cfe6ef611a864efa5f262c744b5a7cc52aab7a))
+* **deps:** update node.js to 18.17 ([63ea5b0](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/63ea5b0633399bbac7a6269695932e7df15c47de))
+
 ## [1.0.3](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.2...1.0.3) (2023-06-14)
 
 
