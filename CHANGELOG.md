@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.5...1.0.6) (2023-09-09)
+
+
+### Dependency updates
+
+* **core-deps:** update docker/build-push-action action to v4.2.1 ([e14c1a9](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/e14c1a9ed24824289822c6f3f65ed0881984ec7d))
+
 ## [1.0.5](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.4...1.0.5) (2023-09-08)
 
 
