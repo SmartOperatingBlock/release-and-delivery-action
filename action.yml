@@ -72,13 +72,13 @@ runs:
       uses: docker/setup-buildx-action@v2
     - name: Login to Docker Hub               # if the client has not provided a custom registry, then login to Docker Hub
       if: env.should-deliver-container == 'true' && inputs.container-registry-name == 'false'
-      uses: docker/login-action@v2.2.0
+      uses: docker/login-action@v3.0.0
       with:
         username: ${{ inputs.container-registry-username }}
         password: ${{ inputs.container-registry-password }}
     - name: Login to the Container registry   # Otherwise, if the client has provided a custom registry, then login to it
       if: env.should-deliver-container == 'true' && inputs.container-registry-name != 'false'
-      uses: docker/login-action@v2.2.0
+      uses: docker/login-action@v3.0.0
       with:
         registry: ${{ inputs.container-registry-name }}
         username: ${{ inputs.container-registry-username }}
