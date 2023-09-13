@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.9...1.0.10) (2023-09-13)
+
+
+### Dependency updates
+
+* **core-deps:** update docker/setup-qemu-action action to v3 ([dd24f6f](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/dd24f6f0beb44f9923458999423e55376b1e81f8))
+
 ## [1.0.9](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.8...1.0.9) (2023-09-13)
 
 
