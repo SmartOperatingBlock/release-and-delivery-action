@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.7...1.0.8) (2023-09-13)
+
+
+### Dependency updates
+
+* **core-deps:** update docker/login-action action to v3 ([a284fb1](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/a284fb137edd5bfbd4a5d486a60d6f638671671a))
+
 ## [1.0.7](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.6...1.0.7) (2023-09-13)
 
 
