@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.8...1.0.9) (2023-09-13)
+
+
+### Dependency updates
+
+* **core-deps:** update docker/setup-buildx-action action to v3 ([2e599ce](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/2e599ce4bd0cc99bc8594c42efd66e580106dabe))
+
 ## [1.0.8](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.7...1.0.8) (2023-09-13)
 
 
