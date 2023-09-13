@@ -1,3 +1,12 @@
+## [1.0.7](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.6...1.0.7) (2023-09-13)
+
+
+### Dependency updates
+
+* **core-deps:** update docker/build-push-action action to v5 ([99a1309](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/99a13092b7a8b7107f577235382bb9b5b5823410))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.54 ([c5b8c3a](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/c5b8c3ad2d4b663fa18f3a029ac9a1eb09f8ebdb))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.55 ([b7c5ef8](https://github.com/SmartOperatingBlock/release-and-delivery-action/commit/b7c5ef8157e739b72ff4343762f10945ed3e1a63))
+
 ## [1.0.6](https://github.com/SmartOperatingBlock/release-and-delivery-action/compare/1.0.5...1.0.6) (2023-09-09)
 
 
