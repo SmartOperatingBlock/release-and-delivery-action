@@ -105,7 +105,7 @@ runs:
         fi
     - name: Build and push the image to the Container registry
       if: env.should-deliver-container == 'true'
-      uses: docker/build-push-action@v5.1.0
+      uses: docker/build-push-action@v6.9.0
       with:
         context: .
         file: "./${{ inputs.docker-file-src }}" # Dockerfile path
